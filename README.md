@@ -33,8 +33,10 @@ When writing queries, you might notice that some required columns are missing fr
 14. List of employees who need updated in-house training
 15. List of employees who have expired training
 16. How many uniforms remain un-allocated?
-17. How your projects will be evaluated
-18. When you submit your project, I will:
+
+
+# How your projects will be evaluated
+# When you submit your project, I will:
 
 Run the first script you submitted to create your DB. I expect the DB to be loaded with sample data. 
 Run the second script to see answers to the questions. I expect to have all your queries run without errors and produce the correct answer.
