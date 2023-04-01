@@ -63,9 +63,9 @@ When writing queries, you might notice that some required columns are missing fr
 - [ ] 16. How many uniforms remain un-allocated?
 
 ## Shawn
-- [ x ] 4. How many breaker shifts are scheduled this week?   
-- [ x ] 6. Any Slot Attendants who have not been assigned to Section NORTH in the last month
-- [ x ] 8. List of active WW sorted by date and employee       
+- [x] 4. How many breaker shifts are scheduled this week?   
+- [x] 6. Any Slot Attendants who have not been assigned to Section NORTH in the last month
+- [x] 8. List of active WW sorted by date and employee       
 
 
 # How your projects will be evaluated
