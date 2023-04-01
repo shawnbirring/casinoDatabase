@@ -17,7 +17,7 @@ GO
 USE Casino_DB
 
 CREATE TABLE Employee (
-    Emp_Num CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
+    Emp_Num CHAR(10) PRIMARY KEY NOT NULL,
     FOREIGN KEY (Emp_Role) REFERENCES EmployeeRole(Role_ID)
     Emp_First_Name VARCHAR(20) NOT NULL,
     Emp_Last_Name VARCHAR(20) NOT NULL,
@@ -35,21 +35,21 @@ CREATE TABLE Employee (
 );
 
 CREATE TABLE EmployeeRole (
-    Role_ID CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
+    Role_ID CHAR(10) PRIMARY KEY NOT NULL,
     Role_Title VARCHAR(20) NOT NULL,
     Role_Tasks VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Leave (
-    Leave_ID CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
-    FOREIGN Key (Emp_Num) REFERENCES Employee(Emp_Num) PRIMARY KEY UNIQUE NOT NULL,
+    Leave_ID CHAR(10) PRIMARY KEY NOT NULL,
+    FOREIGN Key (Emp_Num) REFERENCES Employee(Emp_Num) PRIMARY KEY NOT NULL,
     Leave_Start DATE NOT NULL,
     Leave_End DATE NOT NULL,
     Leave_Info VARCHAR(50)
 );
 
 CREATE TABLE Written_Warning (
-    WW_ID PRIMARY KEY UNIQUE NOT NULL,
+    WW_ID PRIMARY KEY NOT NULL,
     FOREIGN Key (WW_Recipient) REFERENCES Employee(Emp_Num) NOT NULL,
     FOREIGN Key (WW_Issuer) REFERENCES Employee(Emp_Num) NOT NULL,
     WW_Details VARCHAR(50),
@@ -58,7 +58,7 @@ CREATE TABLE Written_Warning (
 );
 
 CREATE TABLE Uniform (
-    Uniform_ID CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
+    Uniform_ID CHAR(10) PRIMARY KEY NOT NULL,
     Uniform_Size VARCHAR(10) NOT NULL,
     Uniform_Color VARCHAR(10) NOT NULL,
     Uniform_Count INT NOT NULL
@@ -72,7 +72,7 @@ CREATE TABLE Uniform_Issue (
 );
 
 CREATE TABLE Department (
-    Dep_ID CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
+    Dep_ID CHAR(10) PRIMARY KEY NOT NULL,
     Dep_Name VARCHAR(20) NOT NULL,
 );
 
@@ -85,7 +85,7 @@ CREATE TABLE Department_History (
 );
 
 CREATE TABLE Shift (
-    Shift_ID CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
+    Shift_ID CHAR(10) PRIMARY KEY NOT NULL,
     FOREIGN Key (Shift_Assigned_To) REFERENCES Employee(Emp_Num) NOT NULL,
     FOREIGN Key (Shift_Covered_By) REFERENCES Employee(Emp_Num) NOT NULL,
     FOREIGN Key (Sch_ID) REFERENCES Schedule(Sch_ID) NOT NULL,
@@ -96,14 +96,14 @@ CREATE TABLE Shift (
 );
 
 CREATE TABLE Schedule (
-    Sch_ID CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
+    Sch_ID CHAR(10) PRIMARY KEY NOT NULL,
     FOREIGN Key (Created_By) REFERENCES Employee(Emp_Num) NOT NULL,
     Sch_Start_Date DATE NOT NULL,
     Sch_End_Date DATE NOT NULL,
 );
 
 CREATE TABLE Section (
-    Section_ID CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
+    Section_ID CHAR(10) PRIMARY KEY NOT NULL,
     Section_Location VARCHAR(20) NOT NULL,
     Section_Name VARCHAR(20) NOT NULL
 );
@@ -115,7 +115,7 @@ CREATE TABLE Shift_Inventory (
 );
 
 CREATE TABLE Inventory (
-    Inventory_ID CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
+    Inventory_ID CHAR(10) PRIMARY KEY NOT NULL,
     Item_Name VARCHAR(20) NOT NULL,
     Item_Price INT,
     Item_Quantity INT NOT NULL,
@@ -129,14 +129,14 @@ CREATE TABLE Section_Skill (
 );
 
 CREATE TABLE Skill (
-    Skill_ID CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
+    Skill_ID CHAR(10) PRIMARY KEY NOT NULL,
     Skill_Type VARCHAR(20),
     Skill_Name VARCHAR(20) NOT NULL,
     Skill_Description VARCHAR(50)
 );
 
 CREATE TABLE Certificate (
-    Cert_ID CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
+    Cert_ID CHAR(10) PRIMARY KEY NOT NULL,
     Cert_Name VARCHAR(20) NOT NULL,
     Cert_Type VARCHAR(20)
 );
