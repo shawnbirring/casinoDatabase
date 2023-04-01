@@ -1,3 +1,21 @@
+USE master 
+GO 
+
+--Use if we want to drop database and create a new one--
+
+/* IF EXISTS (
+   SELECT name 
+       FROM sys.databases
+       WHERE name = "Casino_DB"
+)
+DROP DATABASE Casino_DB
+GO */
+
+CREATE DATABASE Casino_DB
+GO 
+
+USE Casino_DB
+
 CREATE TABLE Employee (
     Emp_Num CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
     FOREIGN KEY (Emp_Role) REFERENCES EmployeeRole(Role_ID) Emp_First_Name VARCHAR(20) NOT NULL,
@@ -76,7 +94,9 @@ CREATE TABLE Shift (
     Shift_Is_Breaker BIT NOT NULL,
     Shift_Start_Time DATETIME NOT NULL,
     Shift_End_Time DATETIME NOT NULL,
-) CREATE TABLE Schedule (
+);
+
+CREATE TABLE Schedule (
     Sch_ID CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
     FOREIGN Key (Created_By) REFERENCES Employee(Emp_Num) NOT NULL,
     Sch_Start_Date DATE NOT NULL,
