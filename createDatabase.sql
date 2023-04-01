@@ -18,7 +18,8 @@ USE Casino_DB
 
 CREATE TABLE Employee (
     Emp_Num CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
-    FOREIGN KEY (Emp_Role) REFERENCES EmployeeRole(Role_ID) Emp_First_Name VARCHAR(20) NOT NULL,
+    FOREIGN KEY (Emp_Role) REFERENCES EmployeeRole(Role_ID)
+    Emp_First_Name VARCHAR(20) NOT NULL,
     Emp_Last_Name VARCHAR(20) NOT NULL,
     Emp_Hire_Date DATE NOT NULL,
     Emp_Pay_Rate INT NOT NULL,
