@@ -1,17 +1,20 @@
 USE master
 GO
-    /* IF EXISTS (
-     SELECT name 
-     FROM sys.databases
-     WHERE name = "Casino_DB"
-     )
-     DROP DATABASE Casino_DB
-     GO */
+-- IF EXISTS (
+--     SELECT name 
+--     FROM sys.databases
+--     WHERE name = 'Casino_DB'
+-- )
+-- BEGIN
+--     DROP DATABASE Casino_DB
+-- END
+-- GO
 CREATE DATABASE Casino_DB
 GO
 
 USE Casino_DB
 GO
+
     
     
 CREATE TABLE EmployeeRole (
@@ -24,11 +27,10 @@ CREATE TABLE Department (
     Dep_ID CHAR(10) PRIMARY KEY,
     Dep_Name VARCHAR(20) NOT NULL
 );
-
 CREATE TABLE Employee (
     Emp_Num CHAR(10) PRIMARY KEY,
     Emp_Role CHAR(10) NOT NULL,
-    FOREIGN KEY (Emp_Role) REFERENCES EmployeeRole(Role_ID) NOT NULL,
+    FOREIGN KEY (Emp_Role) REFERENCES EmployeeRole(Role_ID),
     Emp_First_Name VARCHAR(20) NOT NULL,
     Emp_Last_Name VARCHAR(20) NOT NULL,
     Emp_Hire_Date DATE NOT NULL,
@@ -43,6 +45,7 @@ CREATE TABLE Employee (
     Emp_Vacation_Days INT,
     Emp_Sick_Days INT
 );
+
 
 CREATE TABLE Leave (
     Leave_ID CHAR(10),
