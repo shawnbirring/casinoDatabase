@@ -157,7 +157,7 @@ CREATE TABLE Shift_Inventory (
     FOREIGN Key (Shift_ID) REFERENCES Shift(Shift_ID),
     Inventory_ID CHAR(10) NOT NULL,
     FOREIGN Key (Inventory_ID) REFERENCES Inventory(Inventory_ID),
-    Uniform_Issue_Date DATE NOT NULL,
+    Item_Quantity_Required INT NOT NULL,
     PRIMARY KEY (Shift_ID, Inventory_ID)
 );
 
