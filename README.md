@@ -34,33 +34,33 @@ When writing queries, you might notice that some required columns are missing fr
 15. List of employees who have expired training
 16. How many uniforms remain un-allocated?
 
-#Questions Assigned to Each Member
+# Questions Assigned to Each Member
 
-##Brian
+## Brian
 List of employees who has the mandatory certification expiring in the next 6 weeks   
 Number of vacation days an employee has available
 Number of hours each employee worked per week?                             
 
 
-##Michelle
+## Michelle
 List of employees who need updated in-house training    
 Number of sick days an employee has available
 Number of labor hours last week?                              
  
  
-##Hyuk
+## Hyuk
 List of employees who have expired training       
 A list of an employee's discipline/performance actions
 List of which employees worked breaker shifts in the last month. 
  
 
-##Maximillian
+## Maximillian
 Statistics on Employees: Number of Female/Male employees, Average age of employees? Number of employees over 50? Under 30 
 Any Slot Attendants who have not been assigned to Section NORTH in the last month
 How many Slot Attendants are scheduled today?       
 How many uniforms remain un-allocated?
 
-##Shawn
+## Shawn
 How many breaker shifts are scheduled this week?   
 List of active WW sorted by date and employee       
 Number of active Written Warning (WW) employee A has?     
