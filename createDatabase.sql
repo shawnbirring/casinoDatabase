@@ -17,7 +17,7 @@ GO
 CREATE TABLE EmployeeRole (
     Role_ID CHAR(10) PRIMARY KEY,
     Role_Title VARCHAR(20) NOT NULL,
-    Role_Tasks VARCHAR(100) NOT NULL
+    Role_Tasks VARCHAR(100)
 );
 
 CREATE TABLE Department (
@@ -28,7 +28,7 @@ CREATE TABLE Department (
 CREATE TABLE Employee (
     Emp_Num CHAR(10) PRIMARY KEY,
     Emp_Role CHAR(10) NOT NULL,
-    FOREIGN KEY (Emp_Role) REFERENCES EmployeeRole(Role_ID),
+    FOREIGN KEY (Emp_Role) REFERENCES EmployeeRole(Role_ID) NOT NULL,
     Emp_First_Name VARCHAR(20) NOT NULL,
     Emp_Last_Name VARCHAR(20) NOT NULL,
     Emp_Hire_Date DATE NOT NULL,
@@ -45,12 +45,13 @@ CREATE TABLE Employee (
 );
 
 CREATE TABLE Leave (
-    Leave_ID CHAR(10) PRIMARY KEY,
+    Leave_ID CHAR(10),
     Emp_Num CHAR(10) NOT NULL,
     FOREIGN Key (Emp_Num) REFERENCES Employee(Emp_Num),
     Leave_Start DATE NOT NULL,
     Leave_End DATE NOT NULL,
-    Leave_Info VARCHAR(50)
+    Leave_Info VARCHAR(50),
+    PRIMARY KEY (Leave_ID, Emp_Num)
 );
 
 CREATE TABLE Written_Warning (
@@ -132,7 +133,7 @@ CREATE TABLE Shift (
     Shift_ID CHAR(10) PRIMARY KEY,
     Shift_Assigned_To CHAR(10) NOT NULL,
     FOREIGN Key (Shift_Assigned_To) REFERENCES Employee(Emp_Num),
-    Shift_Covered_By CHAR(10) NOT NULL,
+    Shift_Covered_By CHAR(10),
     FOREIGN Key (Shift_Covered_By) REFERENCES Employee(Emp_Num),
     Sch_ID CHAR(10) NOT NULL,
     FOREIGN Key (Sch_ID) REFERENCES Schedule(Sch_ID),
