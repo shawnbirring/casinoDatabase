@@ -1,5 +1,6 @@
 CREATE TABLE Employee (
 Emp_Num CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
+FOREIGN KEY (Emp_Role) REFERENCES EmployeeRole(Role_ID)
 Emp_First_Name VARCHAR(20) NOT NULL,
 Emp_Last_Name VARCHAR(20) NOT NULL,
 Emp_Hire_Date DATE NOT NULL,
@@ -15,7 +16,6 @@ Emp_Vacation_Days INT,
 Emp_Sick_Days INT,
 Emp_Role VARCHAR(20) NOT NULL,
 Role_ID CHAR(10) UNIQUE NOT NULL,
-FOREIGN KEY (Emp_Role) REFERENCES EmployeeRole(Role_ID)
 );
 
 CREATE TABLE EmployeeRole (
