@@ -1,21 +1,20 @@
 CREATE TABLE Employee (
-Emp_Num CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
-FOREIGN KEY (Emp_Role) REFERENCES EmployeeRole(Role_ID)
-Emp_First_Name VARCHAR(20) NOT NULL,
-Emp_Last_Name VARCHAR(20) NOT NULL,
-Emp_Hire_Date DATE NOT NULL,
-Emp_Pay_Rate INT NOT NULL,
-Emp_DOB DATE NOT NULL,
-Emp_Address VARCHAR(50) NOT NULL,
-Emp_Phone_Number CHAR(10) UNIQUE NOT NULL,
-Emp_Email VARCHAR(25) UNIQUE NOT NULL,
-Emp_Gender CHAR(1) NOT NULL,
-Emp_Fire_Date DATE,
-Emp_Locker_Number VARCHAR(5) UNIQUE,
-Emp_Vacation_Days INT,
-Emp_Sick_Days INT,
-Emp_Role VARCHAR(20) NOT NULL,
-Role_ID CHAR(10) UNIQUE NOT NULL,
+    Emp_Num CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
+    FOREIGN KEY (Emp_Role) REFERENCES EmployeeRole(Role_ID) Emp_First_Name VARCHAR(20) NOT NULL,
+    Emp_Last_Name VARCHAR(20) NOT NULL,
+    Emp_Hire_Date DATE NOT NULL,
+    Emp_Pay_Rate INT NOT NULL,
+    Emp_DOB DATE NOT NULL,
+    Emp_Address VARCHAR(50) NOT NULL,
+    Emp_Phone_Number CHAR(10) UNIQUE NOT NULL,
+    Emp_Email VARCHAR(25) UNIQUE NOT NULL,
+    Emp_Gender CHAR(1) NOT NULL,
+    Emp_Fire_Date DATE,
+    Emp_Locker_Number VARCHAR(5) UNIQUE,
+    Emp_Vacation_Days INT,
+    Emp_Sick_Days INT,
+    Emp_Role VARCHAR(20) NOT NULL,
+    Role_ID CHAR(10) UNIQUE NOT NULL,
 );
 
 CREATE TABLE EmployeeRole (
@@ -57,7 +56,7 @@ CREATE TABLE Uniform_Issue (
 
 CREATE TABLE Department (
     Dep_ID CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
-    Dep_Name VARCHAR(20) NOT NULL, 
+    Dep_Name VARCHAR(20) NOT NULL,
 );
 
 CREATE TABLE Department_History (
@@ -77,9 +76,7 @@ CREATE TABLE Shift (
     Shift_Is_Breaker BIT NOT NULL,
     Shift_Start_Time DATETIME NOT NULL,
     Shift_End_Time DATETIME NOT NULL,
-)
-
-CREATE TABLE Schedule (
+) CREATE TABLE Schedule (
     Sch_ID CHAR(10) PRIMARY KEY UNIQUE NOT NULL,
     FOREIGN Key (Created_By) REFERENCES Employee(Emp_Num) NOT NULL,
     Sch_Start_Date DATE NOT NULL,
