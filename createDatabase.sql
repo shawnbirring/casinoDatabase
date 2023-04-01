@@ -30,9 +30,7 @@ CREATE TABLE Employee (
     Emp_Fire_Date DATE,
     Emp_Locker_Number VARCHAR(5) UNIQUE,
     Emp_Vacation_Days INT,
-    Emp_Sick_Days INT,
-    Emp_Role VARCHAR(20) NOT NULL,
-    Role_ID CHAR(10) UNIQUE NOT NULL,
+    Emp_Sick_Days INT
 );
 
 CREATE TABLE EmployeeRole (
