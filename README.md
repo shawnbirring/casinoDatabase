@@ -37,9 +37,9 @@ When writing queries, you might notice that some required columns are missing fr
 # Questions Assigned to Each Member
 
 ## Brian
-- [ ] 1. Number of hours each employee worked per week?                             
-- [ ] 11. Number of vacation days an employee has available
-- [ ] 13. List of employees who has the mandatory certification expiring in the next 6 weeks 
+- [x] 1. Number of hours each employee worked per week?                             
+- [x] 11. Number of vacation days an employee has available
+- [x] 13. List of employees who has the mandatory certification expiring in the next 6 weeks 
  
  
 ## Michelle
