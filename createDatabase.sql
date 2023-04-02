@@ -1,14 +1,15 @@
 USE master
 GO
--- IF EXISTS (
---     SELECT name 
---     FROM sys.databases
---     WHERE name = 'Casino_DB'
--- )
--- BEGIN
---     DROP DATABASE Casino_DB
--- END
--- GO
+--  IF EXISTS (
+--      SELECT name 
+--      FROM sys.databases
+--      WHERE name = 'Casino_DB'
+--  )
+--   BEGIN
+--       DROP DATABASE Casino_DB
+--   END
+--GO
+
 CREATE DATABASE Casino_DB
 GO
 
@@ -17,7 +18,7 @@ GO
     
 CREATE TABLE EmployeeRole (
     Role_ID CHAR(10) PRIMARY KEY,
-    Role_Title VARCHAR(20) NOT NULL,
+    Role_Title VARCHAR(35) NOT NULL,
     Role_Tasks VARCHAR(100)
 );
 
@@ -117,8 +118,8 @@ CREATE TABLE Section (
 CREATE TABLE Skill (
     Skill_ID CHAR(10) PRIMARY KEY,
     Skill_Type VARCHAR(20),
-    Skill_Name VARCHAR(20) NOT NULL,
-    Skill_Description VARCHAR(50)
+    Skill_Name VARCHAR(50) NOT NULL,
+    Skill_Description VARCHAR(100)
 );
 
 CREATE TABLE Section_Skill (
@@ -126,7 +127,7 @@ CREATE TABLE Section_Skill (
     FOREIGN Key (Section_ID) REFERENCES Section(Section_ID),
     Skill_ID CHAR(10) NOT NULL,
     FOREIGN Key (Skill_ID) REFERENCES Skill(Skill_ID),
-    Reason VARCHAR(35),
+    Reason VARCHAR(100),
     PRIMARY KEY (Section_ID, Skill_ID)
 );
 
@@ -164,11 +165,12 @@ CREATE TABLE Shift_Inventory (
 
 CREATE TABLE Certificate (
     Cert_ID CHAR(10) PRIMARY KEY,
-    Cert_Name VARCHAR(20) NOT NULL,
+    Cert_Name VARCHAR(35) NOT NULL,
     Cert_Type VARCHAR(20)
 );
 
 CREATE TABLE InHouse_Training (
+    IH_ID CHAR(10) PRIMARY KEY,
     IH_Training_Attendee CHAR(10) NOT NULL,
     FOREIGN Key (IH_Training_Attendee) REFERENCES Employee(Emp_Num),
     IH_Training_Instructor CHAR(10) NOT NULL,
@@ -178,15 +180,11 @@ CREATE TABLE InHouse_Training (
     IH_Training_Description VARCHAR(50),
     IH_Training_Date DATE NOT NULL,
     IH_Training_Status VARCHAR(3) NOT NULL,
-    IH_Training_Valid_Duration INT NOT NULL,
-    PRIMARY KEY (
-        IH_Training_Attendee,
-        IH_Training_Instructor,
-        Skill_ID
-    )
+    IH_Training_Valid_Duration INT
 );
 
 CREATE TABLE Regulatory_Training (
+    R_ID CHAR(10) PRIMARY KEY,
     R_Training_Attendee CHAR(10) NOT NULL,
     FOREIGN Key (R_Training_Attendee) REFERENCES Employee(Emp_Num),
     Cert_ID CHAR(10) NOT NULL,
@@ -194,6 +192,5 @@ CREATE TABLE Regulatory_Training (
     R_Training_Description VARCHAR(50),
     R_Training_Date DATE NOT NULL,
     R_Training_Status VARCHAR(3) NOT NULL,
-    R_Training_Valid_Duration INT NOT NULL,
-    PRIMARY KEY (R_Training_Attendee, Cert_ID)
+    R_Training_Valid_Duration INT
 );
