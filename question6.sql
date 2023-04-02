@@ -4,7 +4,7 @@
 
 SELECT Employee.Emp_Num, Employee.Emp_First_Name
 FROM Employee
-WHERE Employee.Emp_Role = 'R04'
+WHERE Employee.Emp_Role = 'R000000004'
 AND Employee.Emp_Num NOT IN (
     SELECT Shift_Assigned_To
     FROM Shift
