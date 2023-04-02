@@ -1,0 +1,59 @@
+-- Insert sample data for EmployeeRole
+INSERT INTO EmployeeRole (Role_ID, Role_Title, Role_Tasks) VALUES
+('R000000001', 'Director of Operations', 'Manage a diverse, multi-disciplined team of professionals'),
+('R000000002', 'Shift Manager', 'Responsible for daily management of casino floor'),
+('R000000003', 'Floor Supervisor', 'Manage and schedule slot attendants'),
+('R000000004', 'Slot Attendant', 'Attend to customers in their sections'),
+('R000000005', 'Human Resources', 'Manage records of employees');
+
+-- Insert sample data for Department
+INSERT INTO Department (Dep_ID, Dep_Name) VALUES
+('D000000001', 'Human Resources'),
+('D000000002', 'Slot Floor'),
+('D000000003', 'Janitorial'),
+('D000000004', 'Card Table'),
+('D000000005', 'Security');
+
+-- Insert sample data for Employee
+INSERT INTO Employee (
+    Emp_Num, Emp_Role, Emp_First_Name, Emp_Last_Name, Emp_Hire_Date, 
+    Emp_Pay_Rate, Emp_DOB, Emp_Address, Emp_Phone_Number, Emp_Email, 
+    Emp_Gender, Emp_Fire_Date, Emp_Locker_Number, Emp_Vacation_Days, Emp_Sick_Days
+) VALUES
+--Director of Operations
+('E000000001', 'R000000001', 'John', 'Doe', '2021-01-01', 3000, '1985-01-15', '123 Main St', '5550000001', 'johndoe@email.com', 'M', NULL, 'A001', 10, 5),
+--Shift Managers
+('E000000002', 'R000000002', 'Jane', 'Smith', '2021-02-15', 2000, '1990-02-28', '234 Elm St', '5550000002', 'janesmith@email.com', 'F', NULL, 'A002', 10, 5),
+('E000000003', 'R000000002', 'James', 'Johnson', '2021-03-01', 1800, '1988-07-30', '345 Oak St', '5550000003', 'jamesjohnson@email.com', 'M', NULL, 'A003', 10, 5),
+--Floor Supervisors
+('E000000004', 'R000000003', 'Emily', 'Williams', '2021-04-01', 1700, '1995-04-15', '456 Pine St', '5550000004', 'emilywilliams@email.com', 'F', NULL, 'A004', 10, 5),
+('E000000005', 'R000000003', 'Michael', 'Brown', '2021-05-01', 2800, '1980-09-10', '789 Maple St', '5550000005', 'michaelbrown@email.com', 'M', NULL, 'A005', 10, 5),
+--Slot attendants
+('E000000006', 'R000000004', 'Jessica', 'Davis', '2021-06-15', 1900, '1992-12-05', '890 Walnut St', '5550000006', 'jessicadavis@email.com', 'F', NULL, 'A006', 10, 5),
+('E000000007', 'R000000004', 'Christopher', 'Miller', '2021-07-01', 1800, '1987-03-25', '901 Birch St', '5550000007', 'chrismiller@email.com', 'M', NULL, 'B009', 10, 10)
+
+INSERT INTO Schedule (Sch_ID, Created_By, Sch_Start_Date, Sch_End_Date) VALUES
+('SCH0000001', 'E000000004', '2023-04-03', '2023-04-07'),
+('SCH0000002', 'E000000004', '2023-04-10', '2023-04-14'),
+('SCH0000003', 'E000000005', '2023-04-17', '2023-04-21'),
+('SCH0000004', 'E000000005', '2023-04-24', '2023-04-28');
+
+INSERT INTO Section (Section_ID, Section_Location, Section_Name) VALUES
+('SEC0000001', 'NORTH', 'North slots'),
+('SEC0000002', 'SOUTH', 'South slots'),
+('SEC0000003', 'EAST', 'East Slots'),
+('SEC0000004', 'WEST', 'West Slots');
+
+INSERT INTO Shift (
+    Shift_ID, Shift_Assigned_To, Shift_Covered_By, Sch_ID, Section_ID,
+    Shift_Is_Breaker, Shift_Start_Time, Shift_End_Time
+) VALUES
+('SH00000001', 'E000000006', NULL, 'SCH0000004', 'SEC0000001', 0, '2023-04-27 08:00:00', '2023-04-27 16:00:00'),
+('SH00000002', 'E000000006', 'E000000007', 'SCH04', 'SEC0000001', 1, '2023-04-27 09:00:00', '2023-04-27 09:15:00'),
+('SH00000003', 'E000000007', NULL, 'SCH0000001', 'SEC0000002', 0, '2023-04-03 08:00:00', '2023-04-03 16:00:00'),
+('SH00000004', 'E000000007', NULL, 'SCH0000001', 'SEC0000001', 0, '2023-04-03 08:00:00', '2023-04-03 16:00:00');
+
+INSERT INTO Written_Warning (WW_ID, WW_Recipient, WW_Issuer, WW_Details, WW_Date_Issued, WW_Is_Active) VALUES
+('WW00000001', 'E000000006', 'E000000002', 'Late for shift', '2023-03-01', 'Yes'),
+('WW00000002', 'E000000006', 'E000000002', 'Not following procedures', '2023-03-10', 'Yes'),
+('WW00000003', 'E000000007', 'E000000003', 'Unprofessional behavior', '2023-03-15', 'No');

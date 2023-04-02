@@ -14,8 +14,6 @@ GO
 
 USE Casino_DB
 GO
-
-    
     
 CREATE TABLE EmployeeRole (
     Role_ID CHAR(10) PRIMARY KEY,
