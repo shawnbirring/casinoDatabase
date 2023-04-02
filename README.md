@@ -50,9 +50,9 @@ When writing queries, you might notice that some required columns are missing fr
                            
  
 ## Hyuk
-- [ ] 3. List of which employees worked breaker shifts in the last month. 
-- [ ] 9. A list of an employee's discipline/performance actions
-- [ ] 15. List of employees who have expired training       
+- [x] 3. List of which employees worked breaker shifts in the last month. 
+- [x] 9. A list of an employee's discipline/performance actions
+- [x] 15. List of employees who have expired training       
 
 
  
