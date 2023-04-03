@@ -33,7 +33,7 @@ INSERT INTO Employee (
 ('E000000007', 'R000000004', 'Christopher', 'Miller', '2021-07-01', 1800, '1987-03-25', '901 Birch St', '5550000007', 'chrismiller@email.com', 'M', NULL, 'B009', 10, 10),
 ('E000000008', 'R000000004', 'Amanda', 'Johnson', '2021-08-01', 1900, '1993-06-20', '1001 Cedar St', '5550000008', 'amandajohnson@email.com', 'F', NULL, 'A008', 10, 5),
 ('E000000009', 'R000000004', 'Nathan', 'Smith', '2021-09-01', 1800, '1994-11-10', '1201 Willow St', '5550000009', 'nathansmith@email.com', 'M', NULL, 'A009', 10, 5),
-('E000000010', 'R000000004', 'Brian', 'Kwon', '2017-09-01', 3000, '1991-04-06', '1291 Cool St', '1234567890', 'brianh@email.com', 'F', NULL, 'A129', 20, 25);
+('E000000010', 'R000000004', 'Bob', 'Sagot', '2017-09-01', 3000, '1991-04-06', '1291 Cool St', '1234567890', 'brianh@email.com', 'F', NULL, 'A129', 20, 25);
 
 
 -- Insert sample data for Section
