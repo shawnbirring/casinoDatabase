@@ -57,10 +57,10 @@ When writing queries, you might notice that some required columns are missing fr
 
  
 ## Maximillian
-- [ ] 5. How many Slot Attendants are scheduled today?  
-- [ ] 6. Any Slot Attendants who have not been assigned to Section NORTH in the last month
-- [ ] 12. Statistics on Employees: Number of Female/Male employees, Average age of employees? Number of employees over 50? Under 30   
-- [ ] 16. How many uniforms remain un-allocated?
+- [x] 5. How many Slot Attendants are scheduled today?  
+- [x] 7. Number of active Written Warning (WW) employee A has?
+- [x] 12. Statistics on Employees: Number of Female/Male employees, Average age of employees? Number of employees over 50? Under 30   
+- [x] 16. How many uniforms remain un-allocated?
 
 ## Shawn
 - [x] 4. How many breaker shifts are scheduled this week?   

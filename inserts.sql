@@ -87,7 +87,12 @@ Shift_Is_Breaker, Shift_Start_Time, Shift_End_Time
 ('SH00000009', 'E000000006', NULL,         'SCH0000006', 'SEC0000002', 0, '2023-02-15 08:00:00', '2023-02-15 16:00:00'),
 ('SH00000010', 'E000000007', NULL,         'SCH0000005', 'SEC0000002', 0, '2023-03-28 08:00:00', '2023-03-28 16:00:00'),
 ('SH00000011', 'E000000009', NULL,         'SCH0000005', 'SEC0000002', 0, '2023-03-27 08:00:00', '2023-03-27 16:00:00'),
-('SH00000012', 'E000000008', NULL,         'SCH0000005', 'SEC0000002', 0, '2023-03-26 08:00:00', '2023-03-26 16:00:00');
+('SH00000012', 'E000000008', NULL,         'SCH0000005', 'SEC0000002', 0, '2023-03-26 08:00:00', '2023-03-26 16:00:00'),
+('SH00000013', 'E000000008', NULL, 'SCH0000001', 'SEC0000002', 0, CAST(GETDATE() AS DATE), CAST(GETDATE() AS DATE)),
+('SH00000014', 'E000000007', NULL, 'SCH0000001', 'SEC0000002', 0, CAST(GETDATE() AS DATE), CAST(GETDATE() AS DATE)),
+('SH00000015', 'E000000008', NULL, 'SCH0000001', 'SEC0000002', 0, CAST(GETDATE() AS DATE), CAST(GETDATE() AS DATE)),
+('SH00000016', 'E000000009', NULL, 'SCH0000001', 'SEC0000002', 0, CAST(GETDATE() AS DATE), CAST(GETDATE() AS DATE));
+-- Last 4 shifts are for testing purposes, they may not have a valid date/time.
 
 
 -- Insert sample data for written warning
@@ -122,3 +127,27 @@ R_Training_Status, R_Training_Valid_Duration
 ('RT0000005', 'E000000007', 'CER0000002', 'Card dealer certification course', '2023-01-10', 'YES', 730),
 ('RT0000006', 'E000000005', 'CER0000003', 'Casino security certification course', '2023-01-20', 'YES', 730),
 ('RT0000007', 'E000000005', 'CER0000003', 'Casino security certification course', '2023-01-20', 'NO', NULL);
+
+-- Insert sample data for Uniform
+INSERT INTO Uniform (Uniform_ID, Uniform_Size, Uniform_Color, Uniform_Count) VALUES
+('U00000001', 'S', 'Red', 5),
+('U00000002', 'M', 'Red', 5),
+('U00000003', 'L', 'Red', 5),
+('U00000004', 'XL', 'Red', 5),
+('U00000005', 'S', 'Red', 5),
+('U00000006', 'M', 'Red', 5),
+('U00000007', 'L', 'Red', 5),
+('U00000008', 'XL', 'Red', 5);
+
+-- Insert sample data for Uniform_Issue
+INSERT INTO Uniform_Issue (Uniform_ID, Uniform_Issued_For, Uniform_Issued_By, Uniform_Issue_Date) VALUES
+('U00000006', 'E000000001', 'E000000001', '2023-04-01'),
+('U00000005', 'E000000002', 'E000000001', '2023-04-01'),
+('U00000006', 'E000000003', 'E000000001', '2023-04-01'),
+('U00000007', 'E000000004', 'E000000001', '2023-04-01'),
+('U00000008', 'E000000005', 'E000000001', '2023-04-01'),
+('U00000001', 'E000000006', 'E000000001', '2023-04-01'),
+('U00000002', 'E000000007', 'E000000001', '2023-04-01'),
+('U00000003', 'E000000008', 'E000000001', '2023-04-01'),
+('U00000003', 'E000000009', 'E000000001', '2023-04-01'),
+('U00000004', 'E0000000010', 'E000000001', '2023-04-01');
