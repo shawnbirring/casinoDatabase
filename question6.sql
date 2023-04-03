@@ -2,7 +2,7 @@
  * Any Slot Attendants who have not been assigned to Section NORTH in the last month
  */
 
-SELECT Employee.Emp_Num, Employee.Emp_First_Name, Employee.Emp_Last_Name
+SELECT *
 FROM Employee
 WHERE Employee.Emp_Role = 'R000000004'
 AND Employee.Emp_Num NOT IN (
