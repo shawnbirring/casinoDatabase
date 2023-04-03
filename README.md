@@ -43,9 +43,9 @@ When writing queries, you might notice that some required columns are missing fr
  
  
 ## Michelle
-- [ ] 2. Number of labor hours last week?   
-- [ ] 10. Number of sick days an employee has available
-- [ ] 14. List of employees who need updated in-house training    
+- [x] 2. Number of labor hours last week?   
+- [x] 10. Number of sick days an employee has available
+- [x] 14. List of employees who need updated in-house training    
 
                            
  
